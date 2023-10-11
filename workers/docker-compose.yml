@@ -1,0 +1,84 @@
+version: "3"
+
+services:
+  worker1:
+    env_file:
+      - .env    
+    image: worker1:latest
+    build:
+      context: ${ZEEBE_WORKER_LOCATION}\worker1\
+      dockerfile: ${ZEEBE_WORKER_LOCATION}\worker1\Dockerfile
+    environment:
+      - ZEEBE_WORKER_MODE="normal"
+    network_mode: "host"
+  worker2:
+    env_file:
+      - .env    
+    image: worker2:latest
+    build:
+      context: ${ZEEBE_WORKER_LOCATION}\worker2\
+      dockerfile: ${ZEEBE_WORKER_LOCATION}\worker2\Dockerfile
+    environment:
+      - ZEEBE_WORKER_MODE="normal"
+    network_mode: "host"
+  worker3:
+    env_file:
+      - .env    
+    image: worker3:latest
+    build:
+      context: ${ZEEBE_WORKER_LOCATION}\worker3\
+      dockerfile: ${ZEEBE_WORKER_LOCATION}\worker3\Dockerfile
+    environment:
+      - ZEEBE_WORKER_MODE="normal"
+    network_mode: "host"
+  worker4:
+    env_file:
+      - .env    
+    image: worker4:latest
+    build:
+      context: ${ZEEBE_WORKER_LOCATION}\worker4\
+      dockerfile: ${ZEEBE_WORKER_LOCATION}\worker4\Dockerfile
+    environment:
+      - ZEEBE_WORKER_MODE="normal"
+    network_mode: "host"
+  worker5:
+    env_file:
+      - .env    
+    image: worker5:latest
+    build:
+      context: ${ZEEBE_WORKER_LOCATION}\worker5\
+      dockerfile: ${ZEEBE_WORKER_LOCATION}\worker5\Dockerfile
+    environment:
+      - ZEEBE_WORKER_MODE="normal"
+    network_mode: "host"
+  worker6:
+    env_file:
+      - .env    
+    image: worker6:latest
+    build:
+      context: ${ZEEBE_WORKER_LOCATION}\worker6\
+      dockerfile: ${ZEEBE_WORKER_LOCATION}\worker6\Dockerfile
+    environment:
+      - ZEEBE_WORKER_MODE="normal"
+    network_mode: "host"
+  worker7:
+    env_file:
+      - .env    
+    image: worker7:latest
+    build:
+      context: ${ZEEBE_WORKER_LOCATION}\worker7\
+      dockerfile: ${ZEEBE_WORKER_LOCATION}\worker7\Dockerfile
+    environment:
+      - ZEEBE_WORKER_MODE="normal"
+    network_mode: "host"        
+  worker8:
+    env_file:
+      - .env    
+    image: worker8:latest
+    build:
+      context: ${ZEEBE_WORKER_LOCATION}\worker8\
+      dockerfile: ${ZEEBE_WORKER_LOCATION}\worker8\Dockerfile
+    environment:
+      - ZEEBE_WORKER_MODE="normal"
+    network_mode: "host"
+   

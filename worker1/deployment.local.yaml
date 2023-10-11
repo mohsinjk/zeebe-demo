@@ -1,0 +1,34 @@
+apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
+kind: Deployment
+metadata:
+  name: worker1-deployment
+spec:
+  selector:
+    matchLabels:
+      app: worker1
+  replicas: 5 # tells deployment to run 2 pods matching the template
+  template:
+    metadata:
+      labels:
+        app: worker1
+    spec:
+      containers:
+        - name: worker1
+          image: worker1:latest
+          ports:
+            - containerPort: 80
+---
+# https://kubernetes.io/docs/concepts/services-networking/service/#defining-a-service
+kind: Service
+apiVersion: v1
+metadata:
+  name: worker1-service
+spec:
+  selector:
+    app: worker1
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+      nodePort: 31000
+  type: NodePort
