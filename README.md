@@ -24,7 +24,7 @@ Start the containers in the background:
 
 ```
 # cd to zeebe
-> docker-compose up
+> docker-compose up -d
 ```
 
 The containers expose the following services:
@@ -193,6 +193,6 @@ curl -X POST -H "Content-Type: application/json" \
 To stop the containers and clean the persistent data:
 
 ```
-> docker-compose down
+> docker-compose down -v
 ```
 
